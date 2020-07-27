@@ -24,6 +24,7 @@ export class Alerts extends Component {
     if (message !== prevProps.message) {
       if (message.deleteCoupon) alert.success(message.deleteCoupon);
       if (message.addCoupon) alert.success(message.addCoupon);
+      if (message.passwordNotMatch) alert.error(message.passwordNotMatch);
     }
   }
 

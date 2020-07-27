@@ -1,14 +1,12 @@
 import axios from "axios";
 import { createMessage, returnErrors } from "./messages";
-/*
 import { tokenConfig } from "./auth";
-*/
 import { GET_COUPONS, DELETE_COUPON, ADD_COUPON } from "./types";
 
 // GET COUPONS
-export const getCoupons = () => (dispatch) => {
+export const getCoupons = () => (dispatch, getState) => {
   axios
-    .get("/api/coupons/")
+    .get("/api/coupons/", tokenConfig(getState))
     .then((res) => {
       dispatch({
         type: GET_COUPONS,
@@ -21,9 +19,9 @@ export const getCoupons = () => (dispatch) => {
 };
 
 // DELETE COUPON
-export const deleteCoupon = (id) => (dispatch) => {
+export const deleteCoupon = (id) => (dispatch, getState) => {
   axios
-    .delete(`/api/coupons/${id}/`)
+    .delete(`/api/coupons/${id}/`, tokenConfig(getState))
     .then((res) => {
       dispatch(createMessage({ deleteCoupon: "Coupon Deleted" }));
       dispatch({
@@ -35,9 +33,9 @@ export const deleteCoupon = (id) => (dispatch) => {
 };
 
 // ADD COUPON
-export const addCoupon = (coupon) => (dispatch) => {
+export const addCoupon = (coupon) => (dispatch, getState) => {
   axios
-    .post("/api/coupons/", coupon)
+    .post("/api/coupons/", coupon, tokenConfig(getState))
     .then((res) => {
       dispatch(createMessage({ addCoupon: "Coupon Added" }));
       dispatch({
