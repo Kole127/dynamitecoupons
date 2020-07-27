@@ -6,8 +6,14 @@ from .serializers import CouponSerializer
 
 
 class CouponViewSet(viewsets.ModelViewSet):
-    queryset = Coupon.objects.all()
     permission_classes = [
-        permissions.AllowAny,
+        permissions.IsAuthenticated,
     ]
+ 
     serializer_class = CouponSerializer
+    
+    def get_queryset(self):
+        return self.request.user.coupons.all()
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
