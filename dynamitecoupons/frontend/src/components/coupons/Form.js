@@ -21,11 +21,11 @@ export class Form extends Component {
     const { name, email, message } = this.state;
     const coupon = { name, email, message };
     this.props.addCoupon(coupon);
-    /*this.setState({
+    this.setState({
       name: "",
       email: "",
       message: "",
-    });*/
+    });
   };
 
   render() {
