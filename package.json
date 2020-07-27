@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development --watch ./dynamitecoupons/frontend/src/index.js --output ./dynamitecoupons/frontend/static/frontend/main.js",
+    "build": "webpack --mode production ./dynamitecoupons/frontend/src/index.js --output ./dynamitecoupons/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,21 @@
   },
   "homepage": "https://github.com/Kole127/dynamitecoupons#readme",
   "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   }
 }
