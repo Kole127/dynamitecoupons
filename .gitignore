@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # GIT IGNORE CHANGE
-=======
-#THIS IS GIT IGNORE FILE
->>>>>>> 733432058f8a6a28bf850bdc8b926ce53fb2ad2c
 
 node_modules
 
