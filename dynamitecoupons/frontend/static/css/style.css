@@ -1,3 +1,40 @@
 .logo {
-    max-width: 200px;
+    max-width: 150px;
+}
+
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size  : 18px;
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-light {
+    background-color: #f9bc77 !important;
+}
+
+.card {
+    background-color: #f9bc77;
+}
+
+.btn-primary {
+    color           : #fff;
+    background-color: #373a4d;
+    border-color    : #373a4d;
+}
+
+a {
+    color: #373a4d;
 }
