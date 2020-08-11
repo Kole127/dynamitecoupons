@@ -1,3 +1,7 @@
+#app {
+    padding-bottom: 50px;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -26,11 +30,21 @@ a {
 }
 
 .bg-light {
-    background-color: #f9bc77 !important;
+    background-color: #ffd504 !important;
 }
 
 .card {
-    background-color: #f9bc77;
+    background-color: rgb(255 213 4 / 97%);
+}
+
+table {
+    background: rgb(255 213 4 / 97%);
+}
+
+.coupons-heading {
+    background   : rgb(255 213 4 / 97%);
+    margin-bottom: 0;
+    padding      : 10px;
 }
 
 .btn-primary,

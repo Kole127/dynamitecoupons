@@ -17,7 +17,7 @@ export class Coupons extends Component {
   render() {
     return (
       <Fragment>
-        <h2>Coupons</h2>
+        <h2 className="coupons-heading">Coupons</h2>
         <table className="table table-striped">
           <thead>
             <tr>
