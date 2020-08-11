@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
+import "../../../static/css/style.css";
 export class Header extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
@@ -60,7 +61,12 @@ export class Header extends Component {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <a className="navbar-brand" href="#">
-              Dynamite Coupons
+              {/* Dynamite Coupons{" "} */}
+              <img
+                className="logo"
+                src="{% get_static_prefix %}../../../static/img/Logo-2.png"
+                alt="Logo"
+              />
             </a>
           </div>
           {isAuthenticated ? authLinks : guestLinks}
