@@ -1,3 +1,19 @@
+/*STATIC*/
+
+.card {
+    background-image: url("../img/Logo-2.png");
+}
+
+#app {
+    background-image: url("../img/ka-boom.png");
+
+    /* 
+    OR INLINE IN index.html
+    style="background-image: url({% static '../static/img/ka-boom.png' %});" 
+    */
+}
+
+/*NON STATIC*/
 #app {
     padding-bottom: 50px;
 }

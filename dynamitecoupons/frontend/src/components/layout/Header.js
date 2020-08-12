@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { logout } from "../../actions/auth";
 
-import "../../../static/css/style.css";
 export class Header extends Component {
   static propTypes = {
     auth: PropTypes.object.isRequired,
