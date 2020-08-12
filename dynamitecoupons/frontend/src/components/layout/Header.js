@@ -16,7 +16,7 @@ export class Header extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <span className="navbar-text mr-3">
-          <strong>{user ? `Welcome ${user.username}` : ""}</strong>
+          Welcome <strong>{user ? `${user.username}` : ""}</strong>
         </span>
         <li className="nav-item">
           <button onClick={this.props.logout} className="btn btn-info btn-sm">
@@ -60,7 +60,7 @@ export class Header extends Component {
               {/* Dynamite Coupons{" "} */}
               <img
                 className="logo"
-                src="{% get_static_prefix %}../../../static/img/Logo-2.png"
+                src="{% get_static_prefix %}../../../static/img/Logo.png"
                 alt="Logo"
               />
             </a>

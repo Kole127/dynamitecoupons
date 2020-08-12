@@ -1,9 +1,4 @@
 /*STATIC*/
-
-.card {
-    background-image: url("../img/Logo-2.png");
-}
-
 #app {
     background-image: url("../img/ka-boom.png");
 
@@ -11,6 +6,27 @@
     OR INLINE IN index.html
     style="background-image: url({% static '../static/img/ka-boom.png' %});" 
     */
+}
+
+.card:before {
+    content            : '';
+    position           : absolute;
+    background         : url(../img/dinamit-tekst.png);
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    top                : 0;
+    left               : 0;
+    height             : 100%;
+    width              : 100%;
+    z-index            : 1;
+    opacity            : 0.1;
+}
+
+.card form,
+.card h2 {
+    position: relative;
+    z-index : 2;
 }
 
 /*NON STATIC*/
