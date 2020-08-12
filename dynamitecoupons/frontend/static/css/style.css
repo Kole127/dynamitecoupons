@@ -15,9 +15,28 @@
     background-position: center;
     background-repeat  : no-repeat;
     background-size    : contain;
-    top                : 0;
+    top                : 30px;
     left               : 0;
-    height             : 100%;
+    height             : 80%;
+    width              : 100%;
+    z-index            : 1;
+    opacity            : 0.1;
+}
+
+.table {
+    position: relative;
+}
+
+.table:before {
+    content            : '';
+    position           : absolute;
+    background         : url(../img/detonator.png);
+    background-position: center;
+    background-repeat  : no-repeat;
+    background-size    : contain;
+    top                : 30px;
+    left               : 0;
+    height             : 60%;
     width              : 100%;
     z-index            : 1;
     opacity            : 0.1;
