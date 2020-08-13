@@ -34,7 +34,7 @@ export class Coupons extends Component {
                 <td>{coupon.id}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.email}</td>
-                <td>{coupon.message}</td>
+                <td>{coupon.mesoge}</td>
                 <td>
                   <button
                     onClick={this.props.deleteCoupon.bind(this, coupon.id)}

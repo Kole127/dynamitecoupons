@@ -7,7 +7,7 @@ export class Form extends Component {
   state = {
     name: "",
     email: "",
-    message: "",
+    mesoge: "",
   };
 
   static propTypes = {
@@ -18,18 +18,18 @@ export class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, email, message } = this.state;
-    const coupon = { name, email, message };
+    const { name, email, mesoge } = this.state;
+    const coupon = { name, email, mesoge };
     this.props.addCoupon(coupon);
     this.setState({
       name: "",
       email: "",
-      message: "",
+      mesoge: "",
     });
   };
 
   render() {
-    const { name, email, message } = this.state;
+    const { name, email, mesoge } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Coupon</h2>
@@ -59,9 +59,9 @@ export class Form extends Component {
             <textarea
               className="form-control"
               type="text"
-              name="message"
+              name="mesoge"
               onChange={this.onChange}
-              value={message}
+              value={mesoge}
             />
           </div>
           <div className="form-group">
