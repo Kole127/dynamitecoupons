@@ -5,10 +5,14 @@ from django.contrib.auth.models import User
 class Coupon(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(max_length=100, unique=True)
-    mesoge = models.CharField(max_length=500, blank=True)
+    is_valid = models.BooleanField(default=True)
     owner = models.ForeignKey(
         User, related_name="coupons", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+class Coupon_Detail(models.Model):
+    c_type = models.CharField(max_length=100)
+    
 
 class Membership(models.Model):
     name = models.CharField(max_length=100)

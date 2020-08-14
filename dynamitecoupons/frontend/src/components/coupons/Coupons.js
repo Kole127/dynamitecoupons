@@ -24,7 +24,7 @@ export class Coupons extends Component {
               <th>ID</th>
               <th>Name</th>
               <th>Email</th>
-              <th>Message</th>
+              <th>Valid</th>
               <th />
             </tr>
           </thead>
@@ -34,7 +34,7 @@ export class Coupons extends Component {
                 <td>{coupon.id}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.email}</td>
-                <td>{coupon.mesoge}</td>
+                <td>{String(coupon.is_valid)}</td>
                 <td>
                   <button
                     onClick={this.props.deleteCoupon.bind(this, coupon.id)}
