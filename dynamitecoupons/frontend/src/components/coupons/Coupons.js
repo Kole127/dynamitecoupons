@@ -24,6 +24,7 @@ export class Coupons extends Component {
               <th>ID</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Expiry Date</th>
               <th>Valid</th>
               <th />
             </tr>
@@ -34,6 +35,7 @@ export class Coupons extends Component {
                 <td>{coupon.id}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.email}</td>
+                <td>{coupon.expiry_date}</td>
                 <td>{String(coupon.is_valid)}</td>
                 <td>
                   <button
