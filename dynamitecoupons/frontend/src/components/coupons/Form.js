@@ -7,6 +7,8 @@ export class Form extends Component {
   state = {
     name: "",
     email: "",
+    discount: "",
+    expiry_date: "",
     /*  is_valid: false,*/
   };
 
@@ -18,18 +20,20 @@ export class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, email /*, is_valid*/ } = this.state;
-    const coupon = { name, email /*, is_valid*/ };
+    const { name, email, discount, expiry_date /*, is_valid*/ } = this.state;
+    const coupon = { name, email, discount, expiry_date /*, is_valid*/ };
     this.props.addCoupon(coupon);
     this.setState({
       name: "",
       email: "",
+      discount: "",
+      expiry_date: "",
       /*  is_valid: true,*/
     });
   };
 
   render() {
-    const { name, email /*, is_valid */ } = this.state;
+    const { name, email, discount, expiry_date /*, is_valid */ } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Coupon</h2>
@@ -45,6 +49,22 @@ export class Form extends Component {
             />
           </div>
           <div className="form-group">
+            <label>Discount</label>
+            <select
+              className="form-control"
+              name="discount"
+              onChange={this.onChange}
+              value={discount}
+            >
+              <option value=""></option>
+              <option value="10">10%</option>
+              <option value="20">20%</option>
+              <option value="30">30%</option>
+              <option value="40">40%</option>
+              <option value="50">50%</option>
+            </select>
+          </div>
+          <div className="form-group">
             <label>Email</label>
             <input
               className="form-control"
@@ -52,6 +72,16 @@ export class Form extends Component {
               name="email"
               onChange={this.onChange}
               value={email}
+            />
+          </div>
+          <div className="form-group">
+            <label>Date</label>
+            <input
+              className="form-control"
+              type="date"
+              name="expiry_date"
+              onChange={this.onChange}
+              value={expiry_date}
             />
           </div>
           {/* <div className="form-group">
