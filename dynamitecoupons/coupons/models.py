@@ -8,7 +8,7 @@ class Coupon(models.Model):
     name = models.CharField(max_length=100)
     discount = models.CharField(max_length=100, null=True)
     # BROJ POSTOTAK
-    email = models.EmailField(max_length=100, unique=True)
+    # email = models.EmailField(max_length=100, unique=True)
     is_valid = models.BooleanField(default=True)
     expiry_date = models.DateField(blank=True,  null=True)
     owner = models.ForeignKey(

@@ -6,7 +6,7 @@ import { addCoupon } from "../../actions/coupons";
 export class Form extends Component {
   state = {
     name: "",
-    email: "",
+    // email: "",
     discount: "",
     expiry_date: "",
     /*  is_valid: false,*/
@@ -20,12 +20,16 @@ export class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, email, discount, expiry_date /*, is_valid*/ } = this.state;
-    const coupon = { name, email, discount, expiry_date /*, is_valid*/ };
+    const {
+      name,
+      /*email,*/ discount,
+      expiry_date /*, is_valid*/,
+    } = this.state;
+    const coupon = { name, /*email,*/ discount, expiry_date /*, is_valid*/ };
     this.props.addCoupon(coupon);
     this.setState({
       name: "",
-      email: "",
+      /*  email: "",*/
       discount: "",
       expiry_date: "",
       /*  is_valid: true,*/
@@ -33,7 +37,11 @@ export class Form extends Component {
   };
 
   render() {
-    const { name, email, discount, expiry_date /*, is_valid */ } = this.state;
+    const {
+      name,
+      /*email,*/ discount,
+      expiry_date /*, is_valid */,
+    } = this.state;
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Coupon</h2>
@@ -64,7 +72,7 @@ export class Form extends Component {
               <option value="50">50%</option>
             </select>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label>Email</label>
             <input
               className="form-control"
@@ -73,7 +81,7 @@ export class Form extends Component {
               onChange={this.onChange}
               value={email}
             />
-          </div>
+          </div> */}
           <div className="form-group">
             <label>Date</label>
             <input
