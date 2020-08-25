@@ -127,3 +127,7 @@ table {
 ul.navbar-nav {
     align-items: center;
 }
+
+.form-group.datum {
+    max-width: 180px;
+}

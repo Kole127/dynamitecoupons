@@ -82,7 +82,7 @@ export class Form extends Component {
               value={email}
             />
           </div> */}
-          <div className="form-group">
+          <div className="form-group datum">
             <label>Date</label>
             <input
               className="form-control"
