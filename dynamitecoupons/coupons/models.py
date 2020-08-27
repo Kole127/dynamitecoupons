@@ -7,11 +7,26 @@ from io import BytesIO
 from django.core.files import File
 from PIL import Image, ImageDraw
 
+class Currency(models.Model):
+    name = models.CharField(max_length=100)
+    code = models.CharField(max_length=3)
+
+class Membership(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.CharField(max_length=500)
+    max_companies = models.IntegerField(null=True)
+
+class Company(models.Model):
+    membership = models.ForeignKey(Membership, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True)
+    location = models.CharField(max_length=255, blank=True)
+    owner = models.ForeignKey(
+        User, related_name="companies", on_delete=models.CASCADE, null=True)
 
 class Coupon(models.Model):
     name = models.CharField(max_length=100)
     discount = models.CharField(max_length=100, null=True)
-    # email = models.EmailField(max_length=100, unique=True)
     is_valid = models.BooleanField(default=True)
     expiry_date = models.DateField(blank=True,  null=True)
     qr_code = models.ImageField(upload_to='qr_codes', blank=True)
@@ -33,16 +48,3 @@ class Coupon(models.Model):
         self.qr_code.save(fname, File(buffer), save=False)
         canvas.close()
         super().save(*args, **kwargs)
-
-class Membership(models.Model):
-    name = models.CharField(max_length=100)
-    m_type = models.EmailField(max_length=100)
-    price = models.CharField(max_length=500)
-
-class Client(models.Model):
-    # LOKACIJA
-    # EMAIL
-    membership = models.ForeignKey(Membership, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=100)
-    last_name = models.EmailField(max_length=100)
-    email = models.EmailField(max_length=100, unique=True)

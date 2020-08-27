@@ -4,16 +4,18 @@ import { tokenConfig } from "./auth";
 import { GET_COUPONS, DELETE_COUPON, ADD_COUPON, GET_COUPONS_U } from "./types";
 
 // GET COUPONS
-export const getCoupons = () => (dispatch /*, getState*/) => {
-  axios.get("/api/coupons/" /*, tokenConfig(getState)*/).then((res) => {
-    dispatch({
-      type: GET_COUPONS,
-      payload: res.data,
-    });
-  });
-  /* .catch((err) =>
+export const getCoupons = () => (dispatch, getState) => {
+  axios
+    .get("/api/coupons/", tokenConfig(getState))
+    .then((res) => {
+      dispatch({
+        type: GET_COUPONS,
+        payload: res.data,
+      });
+    })
+    .catch((err) =>
       dispatch(returnErrors(err.response.data, err.response.status))
-    );*/
+    );
 };
 
 // DELETE COUPON
