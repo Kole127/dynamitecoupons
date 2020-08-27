@@ -128,6 +128,7 @@ ul.navbar-nav {
     align-items: center;
 }
 
-.form-group.datum {
+.form-group.datum,
+.form-group.popust {
     max-width: 180px;
 }

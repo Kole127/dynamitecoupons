@@ -49,14 +49,14 @@ export class Form extends Component {
           <div className="form-group">
             <label>Name</label>
             <input
-              className="form-control"
+              className="form-control naziv"
               type="text"
               name="name"
               onChange={this.onChange}
               value={name}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group popust">
             <label>Discount</label>
             <select
               className="form-control"

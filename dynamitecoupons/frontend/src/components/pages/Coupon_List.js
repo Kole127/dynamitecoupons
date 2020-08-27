@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { getCouponsU } from "../../actions/coupons";
+import coupons from "../../reducers/coupons";
 
 export class Coupons_List extends Component {
   static propTypes = {
@@ -22,11 +23,9 @@ export class Coupons_List extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>Owner</th>
+              <th>Store</th>
               <th>Name</th>
               <th>Discount</th>
-              <th>Expiry Date</th>
-              <th>Valid</th>
             </tr>
           </thead>
           <tbody>
@@ -35,8 +34,6 @@ export class Coupons_List extends Component {
                 <td>{coupon.id}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
-                <td>{coupon.expiry_date}</td>
-                <td>{String(coupon.is_valid)}</td>
               </tr>
             ))}
           </tbody>
