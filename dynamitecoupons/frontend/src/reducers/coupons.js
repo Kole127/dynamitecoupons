@@ -1,4 +1,9 @@
-import { GET_COUPONS, DELETE_COUPON, ADD_COUPON } from "../actions/types.js";
+import {
+  GET_COUPONS,
+  DELETE_COUPON,
+  ADD_COUPON,
+  GET_COUPONS_U,
+} from "../actions/types.js";
 
 const initialState = {
   coupons: [],
@@ -7,6 +12,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case GET_COUPONS:
+    case GET_COUPONS_U:
       return {
         ...state,
         coupons: action.payload,

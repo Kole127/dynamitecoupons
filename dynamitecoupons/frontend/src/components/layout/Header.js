@@ -29,6 +29,11 @@ export class Header extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
         <li className="nav-item">
+          <Link to="/list" className="nav-link">
+            Coupon List
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to="/register" className="nav-link">
             Register
           </Link>
