@@ -132,3 +132,7 @@ ul.navbar-nav {
 .form-group.popust {
     max-width: 180px;
 }
+
+td img {
+    max-width: 100px;
+}

@@ -26,6 +26,7 @@ export class Coupons_List extends Component {
               <th>Store</th>
               <th>Name</th>
               <th>Discount</th>
+              <th>QR code</th>
             </tr>
           </thead>
           <tbody>
@@ -34,6 +35,9 @@ export class Coupons_List extends Component {
                 <td>{coupon.id}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
+                <td>
+                  <img src={coupon.qr_code} />
+                </td>
               </tr>
             ))}
           </tbody>
