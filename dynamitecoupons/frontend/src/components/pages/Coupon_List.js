@@ -32,7 +32,7 @@ export class Coupons_List extends Component {
           <tbody>
             {this.props.coupons.map((coupon) => (
               <tr key={coupon.id}>
-                <td>{coupon.username}</td>
+                <td>{coupon.company_name}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
                 <td>

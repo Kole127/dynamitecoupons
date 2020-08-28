@@ -21,7 +21,7 @@ export class Coupons extends Component {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
+              <th>Store</th>
               <th>Name</th>
               <th>Discount</th>
               <th>Expiry Date</th>
@@ -32,7 +32,7 @@ export class Coupons extends Component {
           <tbody>
             {this.props.coupons.map((coupon) => (
               <tr key={coupon.id}>
-                <td>{coupon.id}</td>
+                <td>{coupon.company_name}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
                 <td>{coupon.expiry_date}</td>

@@ -43,6 +43,8 @@ class Coupon(models.Model):
     qr_code = models.ImageField(upload_to='qr_codes', blank=True)
     owner = models.ForeignKey(
         User, related_name="coupons", on_delete=models.CASCADE, null=True)
+    company = models.ForeignKey(
+        Company, related_name="companies", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

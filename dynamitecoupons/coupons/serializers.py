@@ -3,6 +3,9 @@ from coupons.models import Coupon
 
 # Coupon Serializer
 class CouponSerializer(serializers.ModelSerializer):
+  username = serializers.ReadOnlyField(source='owner.username')
+  company_name = serializers.ReadOnlyField(source='company.name')
+
   class Meta:
     model = Coupon 
     fields = '__all__'
@@ -10,6 +13,7 @@ class CouponSerializer(serializers.ModelSerializer):
 # Coupon Serializer
 class CouponUserSerializer(serializers.ModelSerializer):
   username = serializers.ReadOnlyField(source='owner.username')
+  company_name = serializers.ReadOnlyField(source='company.name')
 
   class Meta:
     model = Coupon 
