@@ -9,6 +9,8 @@ class CouponSerializer(serializers.ModelSerializer):
 
 # Coupon Serializer
 class CouponUserSerializer(serializers.ModelSerializer):
+  username = serializers.ReadOnlyField(source='owner.username')
+
   class Meta:
     model = Coupon 
     fields = '__all__'
