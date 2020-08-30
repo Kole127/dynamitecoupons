@@ -6,6 +6,7 @@ import qrcode
 from io import BytesIO
 from django.core.files import File
 from PIL import Image, ImageDraw
+from datetime import datetime, date
 
 class Currency(models.Model):
     name = models.CharField(max_length=100)
@@ -38,8 +39,10 @@ class Company(models.Model):
 class Coupon(models.Model):
     name = models.CharField(max_length=100)
     discount = models.CharField(max_length=100, null=True)
-    is_valid = models.BooleanField(default=True)
+    is_active = models.CharField(max_length=100, null=True)
     expiry_date = models.DateField(blank=True,  null=True)
+    today_date = models.DateField(auto_now_add=True, null=True)
+    code = models.CharField(max_length=8, null=True)
     qr_code = models.ImageField(upload_to='qr_codes', blank=True)
     owner = models.ForeignKey(
         User, related_name="coupons", on_delete=models.CASCADE, null=True)
@@ -49,9 +52,9 @@ class Coupon(models.Model):
 
     def __str__(self):
         return str(self.name)
-
+        
     def save(self, *args, **kwargs):
-        qrcode_img = qrcode.make(self.name)
+        qrcode_img = qrcode.make(self.code)
         canvas = Image.new('RGB', (290, 290), 'white')
         draw = ImageDraw.Draw(canvas)
         canvas.paste(qrcode_img)

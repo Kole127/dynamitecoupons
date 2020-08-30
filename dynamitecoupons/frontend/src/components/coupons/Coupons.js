@@ -32,11 +32,11 @@ export class Coupons extends Component {
           <tbody>
             {this.props.coupons.map((coupon) => (
               <tr key={coupon.id}>
-                <td>{coupon.company_name}</td>
+                <td>{coupon.username}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
                 <td>{coupon.expiry_date}</td>
-                <td>{String(coupon.is_valid)}</td>
+                <td>{coupon.is_active}</td>
                 <td>
                   <button
                     onClick={this.props.deleteCoupon.bind(this, coupon.id)}

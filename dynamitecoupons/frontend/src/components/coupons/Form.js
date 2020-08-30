@@ -6,10 +6,10 @@ import { addCoupon } from "../../actions/coupons";
 export class Form extends Component {
   state = {
     name: "",
-    // email: "",
+    code: "",
     discount: "",
     expiry_date: "",
-    /*  is_valid: false,*/
+    company: "",
   };
 
   static propTypes = {
@@ -20,28 +20,27 @@ export class Form extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const {
+    const { name, code, discount, expiry_date, company } = this.state;
+    const coupon = {
       name,
-      /*email,*/ discount,
-      expiry_date /*, is_valid*/,
-    } = this.state;
-    const coupon = { name, /*email,*/ discount, expiry_date /*, is_valid*/ };
+      code,
+      discount,
+      expiry_date,
+      company,
+    };
     this.props.addCoupon(coupon);
     this.setState({
       name: "",
-      /*  email: "",*/
+      code: "",
       discount: "",
       expiry_date: "",
-      /*  is_valid: true,*/
+      company: "",
     });
   };
 
   render() {
-    const {
-      name,
-      /*email,*/ discount,
-      expiry_date /*, is_valid */,
-    } = this.state;
+    const { name, code, discount, expiry_date, company } = this.state;
+    
     return (
       <div className="card card-body mt-4 mb-4">
         <h2>Add Coupon</h2>
@@ -54,6 +53,16 @@ export class Form extends Component {
               name="name"
               onChange={this.onChange}
               value={name}
+            />
+          </div>
+          <div className="form-group">
+            <label>Code</label>
+            <input
+              className="form-control naziv"
+              type="text"
+              name="code"
+              onChange={this.onChange}
+              value={code}
             />
           </div>
           <div className="form-group popust">
@@ -72,16 +81,6 @@ export class Form extends Component {
               <option value="50">50%</option>
             </select>
           </div>
-          {/* <div className="form-group">
-            <label>Email</label>
-            <input
-              className="form-control"
-              type="email"
-              name="email"
-              onChange={this.onChange}
-              value={email}
-            />
-          </div> */}
           <div className="form-group datum">
             <label>Date</label>
             <input
@@ -92,16 +91,6 @@ export class Form extends Component {
               value={expiry_date}
             />
           </div>
-          {/* <div className="form-group">
-            <label>Message</label>
-            <input
-              className="form-control"
-              type="checkbox"
-              name="is_valid"
-              onChange={this.onChange}
-              value={is_valid}
-            />
-          </div> */}
           <div className="form-group">
             <button type="submit" className="btn btn-primary">
               Submit

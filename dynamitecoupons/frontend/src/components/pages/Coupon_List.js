@@ -15,6 +15,11 @@ export class Coupons_List extends Component {
   }
 
   render() {
+    var compare_dates = function (date1, date2) {
+      if (date1 >= date2) return "Active";
+      else return "Expired";
+    };
+
     return (
       <Fragment>
         <div className="card card-body mt-4 mb-4">
@@ -26,18 +31,22 @@ export class Coupons_List extends Component {
               <th>Store</th>
               <th>Name</th>
               <th>Discount</th>
+              <th>Valid</th>
               <th>QR code</th>
             </tr>
           </thead>
           <tbody>
             {this.props.coupons.map((coupon) => (
               <tr key={coupon.id}>
-                <td>{coupon.company_name}</td>
+                <td>{coupon.username}</td>
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
                 <td>
+                  {compare_dates(coupon.expiry_date, coupon.today_date)},{" "}
+                  {coupon.expiry_date},
+                </td>
+                <td>
                   <img src={coupon.qr_code} />
-                  {console.log(coupon.owner)}
                 </td>
               </tr>
             ))}
