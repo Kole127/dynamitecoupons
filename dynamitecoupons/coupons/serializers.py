@@ -2,7 +2,6 @@ from rest_framework import serializers
 from coupons.models import Coupon 
 from datetime import date, datetime
 
-
 # Coupon Serializer
 class CouponSerializer(serializers.ModelSerializer):
   username = serializers.ReadOnlyField(source='owner.username')

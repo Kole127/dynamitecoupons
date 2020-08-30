@@ -20,6 +20,20 @@ export class Coupons_List extends Component {
       else return "Expired";
     };
 
+    var today = new Date();
+
+    function formatDate(date) {
+      var d = new Date(date),
+        month = "" + (d.getMonth() + 1),
+        day = "" + d.getDate(),
+        year = d.getFullYear();
+
+      if (month.length < 2) month = "0" + month;
+      if (day.length < 2) day = "0" + day;
+
+      return [year, month, day].join("-");
+    }
+
     return (
       <Fragment>
         <div className="card card-body mt-4 mb-4">
@@ -42,8 +56,8 @@ export class Coupons_List extends Component {
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
                 <td>
-                  {compare_dates(coupon.expiry_date, coupon.today_date)},{" "}
-                  {coupon.expiry_date},
+                  {compare_dates(coupon.expiry_date, formatDate(today))},{" "}
+                  {coupon.expiry_date}
                 </td>
                 <td>
                   <img src={coupon.qr_code} />

@@ -41,7 +41,6 @@ class Coupon(models.Model):
     discount = models.CharField(max_length=100, null=True)
     is_active = models.CharField(max_length=100, null=True)
     expiry_date = models.DateField(blank=True,  null=True)
-    today_date = models.DateField(auto_now_add=True, null=True)
     code = models.CharField(max_length=8, null=True)
     qr_code = models.ImageField(upload_to='qr_codes', blank=True)
     owner = models.ForeignKey(
@@ -49,6 +48,9 @@ class Coupon(models.Model):
     company = models.ForeignKey(
         Company, related_name="companies", on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return str(self.name)
 
     def __str__(self):
         return str(self.name)
