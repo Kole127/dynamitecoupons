@@ -55,10 +55,6 @@
 }
 
 /*NON STATIC*/
-#app {
-    padding-bottom: 50px;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -135,4 +131,9 @@ ul.navbar-nav {
 
 td img {
     max-width: 100px;
+}
+
+/*FOOTER*/
+footer {
+    background: #ffca08;
 }

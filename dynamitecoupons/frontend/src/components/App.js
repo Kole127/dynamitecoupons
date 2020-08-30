@@ -22,6 +22,8 @@ import { Provider } from "react-redux";
 import store from "../store";
 import { loadUser } from "../actions/auth";
 
+import FooterPagePro from "./layout/Footer";
+
 // Alert Options
 const alertOptions = {
   timeout: 3000,
@@ -48,6 +50,7 @@ class App extends Component {
                   <Route exact path="/list" component={Coupons_List} />
                 </Switch>
               </div>
+              <FooterPagePro />
             </Fragment>
           </Router>
         </AlertProvider>
