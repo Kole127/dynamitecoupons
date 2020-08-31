@@ -16,6 +16,7 @@ import Alerts from "./layout/Alerts";
 import Login from "./accounts/Login";
 import Register from "./accounts/Register";
 import Coupons_List from "./pages/Coupon_List";
+import Home from "./pages/Home";
 import PrivateRoute from "./common/PrivateRoute";
 
 import { Provider } from "react-redux";
@@ -48,6 +49,7 @@ class App extends Component {
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/list" component={Coupons_List} />
+                  <Route exact path="/home" component={Home} />
                 </Switch>
               </div>
               <FooterPagePro />

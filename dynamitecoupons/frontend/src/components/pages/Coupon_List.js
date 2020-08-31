@@ -34,10 +34,21 @@ export class Coupons_List extends Component {
       return [year, month, day].join("-");
     }
 
+    function ReformatDate(input) {
+      var datePart = input.match(/\d+/g),
+        year = datePart[0], // get only two digits
+        month = datePart[1],
+        day = datePart[2];
+
+      return day + "." + month + "." + year;
+    }
+
     return (
       <Fragment>
         <div className="card card-body mt-4 mb-4">
-          <h2 className="coupons-heading">Coupons Page</h2>
+          <h2 className="coupons-heading">
+            Scan - Get your coupons - Save money
+          </h2>
         </div>
         <table className="table table-striped">
           <thead>
@@ -57,7 +68,7 @@ export class Coupons_List extends Component {
                 <td>{coupon.discount}%</td>
                 <td>
                   {compare_dates(coupon.expiry_date, formatDate(today))},{" "}
-                  {coupon.expiry_date}
+                  {ReformatDate(coupon.expiry_date)}
                 </td>
                 <td>
                   <img src={coupon.qr_code} />

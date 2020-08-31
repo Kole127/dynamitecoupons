@@ -9,10 +9,12 @@ djangorestframework==3.11.0
 isort==4.3.21
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
+Pillow==7.2.0
 psycopg2==2.8.5
 pycparser==2.20
 pylint==2.5.3
 pytz==2020.1
+qrcode==6.1
 six==1.15.0
 sqlparse==0.3.1
 toml==0.10.1

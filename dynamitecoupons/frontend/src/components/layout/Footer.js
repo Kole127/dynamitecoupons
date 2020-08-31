@@ -3,7 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 
 const FooterPagePro = () => {
   return (
-    <MDBFooter color="mdb-color" className="font-small pt-4 mt-4">
+    <MDBFooter color="mdb-color" className="font-small pt-4 mt-5">
       <MDBContainer className="text-center text-md-left">
         <MDBRow className="text-center text-md-left mt-3 pb-3">
           <MDBCol md="3" lg="3" xl="3" className="mx-auto mt-3">
@@ -30,7 +30,7 @@ const FooterPagePro = () => {
               <a href="#!">Mikronis</a>
             </p>
             <p>
-              <a href="#!">Čazmatransr</a>
+              <a href="#!">Čazmatrans</a>
             </p>
           </MDBCol>
           <hr className="w-100 clearfix d-md-none" />
@@ -74,7 +74,7 @@ const FooterPagePro = () => {
           <MDBCol md="8" lg="8">
             <p className="text-center text-md-left grey-text">
               &copy; {new Date().getFullYear()} Copyright:{" "}
-              <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+              <a href="https://www.MDBootstrap.com"> Dynamite Coupons </a>
             </p>
           </MDBCol>
           <MDBCol md="4" lg="4" className="ml-lg-0">

@@ -15,6 +15,34 @@ export class Coupons extends Component {
   }
 
   render() {
+    var compare_dates = function (date1, date2) {
+      if (date1 >= date2) return "Active";
+      else return "Expired";
+    };
+
+    var today = new Date();
+
+    function formatDate(date) {
+      var d = new Date(date),
+        month = "" + (d.getMonth() + 1),
+        day = "" + d.getDate(),
+        year = d.getFullYear();
+
+      if (month.length < 2) month = "0" + month;
+      if (day.length < 2) day = "0" + day;
+
+      return [year, month, day].join("-");
+    }
+
+    function ReformatDate(input) {
+      var datePart = input.match(/\d+/g),
+        year = datePart[0], // get only two digits
+        month = datePart[1],
+        day = datePart[2];
+
+      return day + "." + month + "." + year;
+    }
+
     return (
       <Fragment>
         <h2 className="coupons-heading">Coupons</h2>
@@ -36,7 +64,10 @@ export class Coupons extends Component {
                 <td>{coupon.name}</td>
                 <td>{coupon.discount}%</td>
                 <td>{coupon.expiry_date}</td>
-                <td>{coupon.is_active}</td>
+                <td>
+                  {compare_dates(coupon.expiry_date, formatDate(today))},{" "}
+                  {ReformatDate(coupon.expiry_date)}
+                </td>
                 <td>
                   <button
                     onClick={this.props.deleteCoupon.bind(this, coupon.id)}
